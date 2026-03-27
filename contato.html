@@ -634,13 +634,21 @@
                 <label for="servico">Serviço de interesse *</label>
                 <select id="servico" required>
                   <option value="" disabled selected>Selecione</option>
-                  <option>Massagem Relaxante Sueca</option>
-                  <option>Massagem Terapêutica Profunda</option>
-                  <option>Massagem com Pedras Quentes</option>
-                  <option>Drenagem Linfática</option>
-                  <option>Shiatsu</option>
-                  <option>Pacote de sessões</option>
-                  <option>Não sei, quero indicação</option>
+                  <optgroup label="Sessão individual">
+                    <option>Massagem Relaxante Sueca — R$ 180</option>
+                    <option>Liberação Miofascial — R$ 180</option>
+                    <option>Massagem Terapêutica Profunda — R$ 180</option>
+                    <option>Ventosaterapia — R$ 180</option>
+                    <option>Drenagem Linfática — R$ 180</option>
+                  </optgroup>
+                  <optgroup label="Pacotes (validade 3 meses)">
+                    <option>Pacote Inicial — 3 sessões · R$ 513</option>
+                    <option>Pacote Bem-estar — 12 sessões · R$ 1.836</option>
+                    <option>Pacote Transformação — 28 sessões · R$ 3.780</option>
+                  </optgroup>
+                  <optgroup label="Outro">
+                    <option>Não sei, quero indicação</option>
+                  </optgroup>
                 </select>
               </div>
               <div class="form-group">
