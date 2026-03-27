@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benefícios da Massagem — Movvi Spa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:       #F5F0E6;
+      --cream-dark:  #EDE7D9;
+      --green-dark:  #2D4939;
+      --green-mid:   #3D5E4A;
+      --olive:       #6A8C35;
+      --olive-light: #8AAE4A;
+      --olive-pale:  #D4E4B0;
+      --white:       #FFFFFF;
+      --text:        #2D4939;
+      --text-light:  #5A7A6A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0 3rem;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 240, 230, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(106, 140, 53, 0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { height: 38px; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--olive); }
+
+    .nav-cta {
+      background: var(--green-dark);
+      color: var(--cream) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background: var(--olive) !important; color: var(--white) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      padding: 130px 3rem 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 160px;
+      background: var(--cream);
+      border-radius: 50%;
+    }
+
+    .page-hero .label {
+      display: inline-block;
+      background: rgba(138,174,74,0.25);
+      color: var(--olive-light);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1 em {
+      font-style: italic;
+      color: var(--olive-light);
+    }
+
+    .page-hero p {
+      color: rgba(245,240,230,0.75);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 3rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      color: var(--green-dark);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    /* ── BENEFÍCIOS PRINCIPAIS ── */
+    .beneficios-principais {
+      background: var(--white);
+    }
+
+    .beneficios-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .beneficios-intro-text p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .beneficios-intro-visual {
+      background: linear-gradient(135deg, var(--olive-pale), var(--cream-dark));
+      border-radius: 20px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+    }
+
+    /* Benefício item detalhado */
+    .beneficio-detalhe {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--cream);
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--olive);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .beneficio-detalhe:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 30px rgba(45,73,57,0.1);
+    }
+
+    .beneficio-detalhe .icon {
+      width: 70px; height: 70px;
+      background: var(--olive-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .beneficio-detalhe h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .beneficio-detalhe p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ── BENEFÍCIOS FÍSICOS ── */
+    .beneficios-fisicos {
+      background: var(--cream);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 1.8rem 1.6rem;
+      border-radius: 16px;
+      border: 1px solid rgba(106,140,53,0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(45,73,57,0.1);
+    }
+
+    .card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ── BENEFÍCIOS MENTAIS ── */
+    .beneficios-mentais {
+      background: var(--green-dark);
+      color: var(--cream);
+    }
+
+    .beneficios-mentais .section-label { color: var(--olive-light); }
+    .beneficios-mentais .section-title { color: var(--cream); }
+    .beneficios-mentais .section-subtitle { color: rgba(245,240,230,0.7); }
+
+    .mental-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .mental-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(138,174,74,0.25);
+      padding: 2rem;
+      border-radius: 16px;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      transition: background 0.3s;
+    }
+
+    .mental-card:hover { background: rgba(255,255,255,0.12); }
+
+    .mental-card .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      background: rgba(138,174,74,0.2);
+      width: 54px; height: 54px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mental-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--olive-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .mental-card p {
+      font-size: 0.9rem;
+      color: rgba(245,240,230,0.7);
+      line-height: 1.65;
+    }
+
+    /* ── BENEFÍCIOS ESTÉTICOS ── */
+    .beneficios-esteticos {
+      background: var(--cream-dark);
+    }
+
+    .esteticos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .estetico-card {
+      background: var(--white);
+      padding: 1.8rem 1.4rem;
+      border-radius: 16px;
+      text-align: center;
+      border-top: 3px solid var(--olive);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .estetico-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(45,73,57,0.1);
+    }
+
+    .estetico-card .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .estetico-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .estetico-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--olive) 0%, var(--green-dark) 100%);
+      text-align: center;
+      padding: 6rem 3rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: rgba(245,240,230,0.8);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-cream {
+      background: var(--cream);
+      color: var(--green-dark);
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      transition: all 0.25s;
+    }
+
+    .btn-cream:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(245,240,230,0.7);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    footer .footer-logo { margin-bottom: 1rem; }
+    footer .footer-logo svg { height: 50px; }
+    footer p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: rgba(245,240,230,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover { color: var(--olive-light); }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .beneficios-intro,
+      .mental-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      .esteticos-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .page-hero { padding: 110px 1.5rem 60px; }
+      .nav-links { display: none; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .esteticos-grid { grid-template-columns: 1fr 1fr; }
+      .beneficio-detalhe { grid-template-columns: 60px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(8,10)">
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(-30,22,32)"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(30,22,32)"/>
+          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#8AAE4A"/>
+          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(-50,10,34)"/>
+          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(50,34,34)"/>
+          <line x1="4" y1="44" x2="40" y2="44" stroke="#6A8C35" stroke-width="1.5"/>
+        </g>
+        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#2D4939">Movvi</text>
+        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="#3D5E4A">Spa</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="beneficios.html" class="active">Benefícios</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="contato.html" class="nav-cta">Agendar</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="label">Saúde & Bem-estar</span>
+    <h1>Benefícios da <em>Massagem</em></h1>
+    <p>Descubra como cada sessão transforma seu corpo, mente e qualidade de vida de forma comprovada pela ciência.</p>
+  </div>
+
+  <!-- BENEFÍCIOS PRINCIPAIS -->
+  <section class="beneficios-principais">
+    <div class="container">
+      <div class="beneficios-intro">
+        <div class="beneficios-intro-text fade-in">
+          <p class="section-label">Por que massagem?</p>
+          <h2 class="section-title">Muito mais do que relaxamento</h2>
+          <p>A massagem terapêutica é uma das práticas de cuidado com a saúde mais antigas e estudadas do mundo. Com técnicas evoluídas ao longo de milênios, ela atua em múltiplas dimensões do bem-estar humano.</p>
+          <p>Cada toque é intencional. Cada movimento tem propósito. Seja para aliviar dores, reduzir o estresse ou simplesmente se reconectar com seu corpo — a massagem entrega resultados reais.</p>
+        </div>
+        <div class="beneficios-intro-visual fade-in">🌿</div>
+      </div>
+
+      <!-- Benefícios detalhados -->
+      <div class="fade-in">
+        <div class="beneficio-detalhe">
+          <div class="icon">💆‍♀️</div>
+          <div>
+            <h3>Redução do Estresse e Ansiedade</h3>
+            <p>A massagem estimula a liberação de serotonina e dopamina — os hormônios do bem-estar — enquanto reduz o nível de cortisol, o hormônio do estresse. Estudos mostram redução de até 53% nos níveis de ansiedade após sessões regulares. Ideal para quem vive sob pressão constante no trabalho ou no dia a dia.</p>
+          </div>
+        </div>
+
+        <div class="beneficio-detalhe">
+          <div class="icon">🩸</div>
+          <div>
+            <h3>Melhora da Circulação Sanguínea</h3>
+            <p>As técnicas de massagem promovem a vasodilatação e estimulam o fluxo sanguíneo por todo o organismo. Isso resulta em melhor oxigenação dos tecidos, aceleração do metabolismo celular e eliminação mais eficiente de toxinas. Pessoas com má circulação, frio nas extremidades ou fadiga muscular sentem diferença já nas primeiras sessões.</p>
+          </div>
+        </div>
+
+        <div class="beneficio-detalhe">
+          <div class="icon">🦴</div>
+          <div>
+            <h3>Alívio de Dores Musculares e Articulares</h3>
+            <p>Tensões acumuladas, nódulos musculares e dores crônicas são tratados com precisão através da manipulação direta dos tecidos moles. A massagem terapêutica libera aderências musculares, melhora a flexibilidade e reduz inflamações localizadas. Especialmente eficaz para dores nas costas, pescoço, ombros e lombar.</p>
+          </div>
+        </div>
+
+        <div class="beneficio-detalhe">
+          <div class="icon">😴</div>
+          <div>
+            <h3>Qualidade do Sono</h3>
+            <p>Ao reduzir a tensão muscular e acalmar o sistema nervoso, a massagem prepara o corpo para um sono mais profundo e reparador. A liberação de melatonina é potencializada após sessões noturnas. Pessoas com insônia, sono leve ou interrompido relatam melhoras significativas com sessões regulares.</p>
+          </div>
+        </div>
+
+        <div class="beneficio-detalhe">
+          <div class="icon">🛡️</div>
+          <div>
+            <h3>Fortalecimento do Sistema Imunológico</h3>
+            <p>Pesquisas da Cedars-Sinai Medical Center demonstraram que uma única sessão de massagem aumenta significativamente a contagem de linfócitos — células do sistema imunológico que combatem doenças. A prática regular fortalece as defesas naturais do organismo, reduzindo a frequência de resfriados e infecções.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS FÍSICOS -->
+  <section class="beneficios-fisicos">
+    <div class="container">
+      <div class="fade-in" style="text-align:center; margin-bottom:0.5rem;">
+        <p class="section-label">Para o seu corpo</p>
+        <h2 class="section-title">Benefícios físicos comprovados</h2>
+        <p class="section-subtitle" style="max-width:560px; margin: 0 auto;">Cada sistema do seu corpo se beneficia de uma sessão de massagem bem executada.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-in">
+          <span class="icon">⚡</span>
+          <h3>Recuperação Muscular</h3>
+          <p>Acelera a eliminação de ácido lático após exercícios físicos intensos, reduzindo dores pós-treino (DOMS) em até 30%.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="icon">🔄</span>
+          <h3>Flexibilidade</h3>
+          <p>Aumenta a amplitude de movimento das articulações ao soltar aderências nos tecidos conectivos e melhorar a lubrificação sinovial.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="icon">💪</span>
+          <h3>Postura Corporal</h3>
+          <p>Corrige desequilíbrios musculares que causam má postura, aliviando tensões compensatórias no pescoço, costas e quadril.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="icon">🫁</span>
+          <h3>Respiração</h3>
+          <p>A massagem na região torácica e diafragmática libera tensões que dificultam a respiração plena, promovendo respiração mais profunda.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="icon">🧬</span>
+          <h3>Sistema Linfático</h3>
+          <p>Estimula a drenagem linfática, reduzindo edemas, inchaços e acúmulo de líquidos, especialmente nas pernas e braços.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="icon">❤️</span>
+          <h3>Pressão Arterial</h3>
+          <p>Sessões regulares contribuem para a redução da pressão arterial sistólica e diastólica em pessoas com hipertensão leve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS MENTAIS -->
+  <section class="beneficios-mentais">
+    <div class="container">
+      <div class="fade-in" style="text-align:center; margin-bottom:0.5rem;">
+        <p class="section-label">Para a sua mente</p>
+        <h2 class="section-title">Saúde mental & equilíbrio emocional</h2>
+        <p class="section-subtitle" style="max-width:560px; margin: 0 auto;">O toque terapêutico vai muito além do físico — ele restaura o equilíbrio emocional e mental.</p>
+      </div>
+      <div class="mental-grid">
+        <div class="mental-card fade-in">
+          <div class="icon">🧘</div>
+          <div>
+            <h3>Redução do Burnout</h3>
+            <p>Combate o esgotamento profissional ao reduzir os marcadores fisiológicos do estresse crônico e restaurar a energia vital.</p>
+          </div>
+        </div>
+        <div class="mental-card fade-in">
+          <div class="icon">🌙</div>
+          <div>
+            <h3>Combate à Depressão</h3>
+            <p>A estimulação do sistema nervoso parassimpático e a liberação de neurotransmissores como serotonina ajudam no tratamento complementar da depressão.</p>
+          </div>
+        </div>
+        <div class="mental-card fade-in">
+          <div class="icon">🎯</div>
+          <div>
+            <h3>Foco e Clareza Mental</h3>
+            <p>Ao reduzir o "ruído" de tensões físicas, a massagem libera capacidade cognitiva, melhorando concentração e tomada de decisão.</p>
+          </div>
+        </div>
+        <div class="mental-card fade-in">
+          <div class="icon">🤝</div>
+          <div>
+            <h3>Conexão Mente-Corpo</h3>
+            <p>Promove consciência corporal e presença plena (mindfulness), ajudando a reconhecer e liberar emoções armazenadas no corpo.</p>
+          </div>
+        </div>
+        <div class="mental-card fade-in">
+          <div class="icon">✨</div>
+          <div>
+            <h3>Autoestima e Autoconhecimento</h3>
+            <p>O cuidado intencional com o próprio corpo fortalece a relação positiva consigo mesmo, aumentando autoestima e bem-estar geral.</p>
+          </div>
+        </div>
+        <div class="mental-card fade-in">
+          <div class="icon">🌊</div>
+          <div>
+            <h3>Regulação Emocional</h3>
+            <p>Sessões regulares melhoram a capacidade de lidar com situações de pressão, reduzindo reatividade emocional e aumentando resiliência.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS ESTÉTICOS -->
+  <section class="beneficios-esteticos">
+    <div class="container">
+      <div class="fade-in" style="text-align:center; margin-bottom:0.5rem;">
+        <p class="section-label">Beleza & estética</p>
+        <h2 class="section-title">Resultados visíveis na sua pele</h2>
+        <p class="section-subtitle" style="max-width:560px; margin: 0 auto;">A massagem regular também transforma a aparência e vitalidade da pele.</p>
+      </div>
+      <div class="esteticos-grid">
+        <div class="estetico-card fade-in">
+          <span class="icon">✨</span>
+          <h3>Pele Mais Luminosa</h3>
+          <p>A melhora na circulação nutre a pele de dentro para fora, deixando-a mais viçosa e radiante.</p>
+        </div>
+        <div class="estetico-card fade-in">
+          <span class="icon">🌊</span>
+          <h3>Redução da Celulite</h3>
+          <p>Técnicas de drenagem e modelagem corporal auxiliam na redução visivelda aparência da celulite.</p>
+        </div>
+        <div class="estetico-card fade-in">
+          <span class="icon">💧</span>
+          <h3>Hidratação Natural</h3>
+          <p>Os óleos utilizados nas sessões penetram nas camadas da pele, proporcionando hidratação intensa e duradoura.</p>
+        </div>
+        <div class="estetico-card fade-in">
+          <span class="icon">🕐</span>
+          <h3>Antienvelhecimento</h3>
+          <p>Estimula a produção de colágeno e elastina, melhorando a firmeza e reduzindo marcas de expressão ao longo do tempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <h2>Pronto para sentir a diferença?</h2>
+      <p>Agende sua primeira sessão na Movvi Spa e descubra como a massagem pode transformar sua qualidade de vida.</p>
+      <a href="contato.html" class="btn-cream">Agendar minha sessão →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(8,10)">
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(-30,22,32)"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(30,22,32)"/>
+          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#A8CC60"/>
+          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(-50,10,34)"/>
+          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(50,34,34)"/>
+          <line x1="4" y1="44" x2="40" y2="44" stroke="#8AAE4A" stroke-width="1.5"/>
+        </g>
+        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#F5F0E6">Movvi</text>
+        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="rgba(245,240,230,0.8)">Spa</text>
+      </svg>
+    </div>
+    <p>Restaurando equilíbrio entre corpo e mente.</p>
+    <p style="font-size:0.8rem; margin-top:0.5rem;">© 2025 Movvi Spa. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="beneficios.html">Benefícios</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
