@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços — Movvi Spa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:       #F5F0E6;
+      --cream-dark:  #EDE7D9;
+      --green-dark:  #2D4939;
+      --green-mid:   #3D5E4A;
+      --olive:       #6A8C35;
+      --olive-light: #8AAE4A;
+      --olive-pale:  #D4E4B0;
+      --white:       #FFFFFF;
+      --text:        #2D4939;
+      --text-light:  #5A7A6A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0 3rem;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 240, 230, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(106, 140, 53, 0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { height: 38px; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--olive); }
+
+    .nav-cta {
+      background: var(--green-dark);
+      color: var(--cream) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background: var(--olive) !important; color: var(--white) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--olive-pale) 100%);
+      padding: 130px 3rem 70px;
+      text-align: center;
+    }
+
+    .page-hero .label {
+      display: inline-block;
+      background: rgba(106,140,53,0.15);
+      color: var(--olive);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1 em {
+      font-style: italic;
+      color: var(--olive);
+    }
+
+    .page-hero p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 3rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      color: var(--green-dark);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    /* ── SERVIÇOS PRINCIPAIS ── */
+    .servicos-main {
+      background: var(--white);
+    }
+
+    .servico-destaque {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(106,140,53,0.12);
+    }
+
+    .servico-destaque:last-child { border-bottom: none; }
+
+    .servico-destaque.reverse { direction: rtl; }
+    .servico-destaque.reverse > * { direction: ltr; }
+
+    .servico-info .tag {
+      display: inline-block;
+      background: var(--olive-pale);
+      color: var(--olive);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .servico-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .servico-info p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .servico-info .detalhes {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .servico-info .detalhe {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    .servico-info .detalhe span:first-child { font-size: 1.1rem; }
+
+    .servico-info .preco-linha {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .servico-info .preco {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .btn-agendar {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 0.7rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+
+    .btn-agendar:hover {
+      background: var(--olive);
+      transform: translateY(-2px);
+    }
+
+    .servico-visual {
+      background: linear-gradient(135deg, var(--olive-pale), var(--cream-dark));
+      border-radius: 20px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    /* ── PACOTES ── */
+    .pacotes {
+      background: var(--cream);
+    }
+
+    .pacotes-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .pacotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .pacote-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pacote-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--olive-pale);
+    }
+
+    .pacote-card.destaque {
+      border-color: var(--olive);
+      transform: scale(1.03);
+    }
+
+    .pacote-card.destaque::before {
+      background: linear-gradient(90deg, var(--olive), var(--olive-light));
+    }
+
+    .pacote-card:hover {
+      box-shadow: 0 20px 50px rgba(45,73,57,0.15);
+    }
+
+    .pacote-badge {
+      display: inline-block;
+      background: var(--olive);
+      color: var(--white);
+      padding: 0.25rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .pacote-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .pacote-card .preco {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--olive);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .pacote-card .preco sup {
+      font-size: 1rem;
+      vertical-align: super;
+    }
+
+    .pacote-card .por-sessao {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .pacote-card ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pacote-card ul li {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(106,140,53,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pacote-card ul li::before {
+      content: '✓';
+      color: var(--olive);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .btn-pacote {
+      width: 100%;
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 0.85rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+      display: block;
+      transition: all 0.25s;
+    }
+
+    .btn-pacote:hover { background: var(--olive); }
+
+    .btn-pacote.outline {
+      background: transparent;
+      border: 2px solid var(--green-dark);
+      color: var(--green-dark);
+    }
+
+    .btn-pacote.outline:hover {
+      background: var(--green-dark);
+      color: var(--cream);
+    }
+
+    /* ── DIFERENCIAIS ── */
+    .diferenciais {
+      background: var(--green-dark);
+      color: var(--cream);
+    }
+
+    .diferenciais .section-label { color: var(--olive-light); }
+    .diferenciais .section-title { color: var(--cream); }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .diferencial {
+      text-align: center;
+    }
+
+    .diferencial .icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+      background: rgba(138,174,74,0.2);
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .diferencial h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--olive-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .diferencial p {
+      font-size: 0.85rem;
+      color: rgba(245,240,230,0.65);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--cream-dark);
+      text-align: center;
+      padding: 6rem 3rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      transition: all 0.25s;
+      margin: 0 0.5rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--olive);
+      transform: translateY(-3px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(245,240,230,0.7);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    footer .footer-logo { margin-bottom: 1rem; }
+    footer .footer-logo svg { height: 50px; }
+    footer p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: rgba(245,240,230,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover { color: var(--olive-light); }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .servico-destaque { grid-template-columns: 1fr; gap: 2rem; }
+      .servico-destaque.reverse { direction: ltr; }
+      .pacotes-grid { grid-template-columns: 1fr; }
+      .pacote-card.destaque { transform: scale(1); }
+      .diferenciais-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .page-hero { padding: 110px 1.5rem 60px; }
+      .nav-links { display: none; }
+      .diferenciais-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(8,10)">
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(-30,22,32)"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(30,22,32)"/>
+          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#8AAE4A"/>
+          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(-50,10,34)"/>
+          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(50,34,34)"/>
+          <line x1="4" y1="44" x2="40" y2="44" stroke="#6A8C35" stroke-width="1.5"/>
+        </g>
+        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#2D4939">Movvi</text>
+        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="#3D5E4A">Spa</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="beneficios.html">Benefícios</a></li>
+      <li><a href="servicos.html" class="active">Serviços</a></li>
+      <li><a href="contato.html" class="nav-cta">Agendar</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="label">Nossas terapias</span>
+    <h1>Serviços <em>exclusivos</em> para o seu bem-estar</h1>
+    <p>Cada técnica foi selecionada por seus terapeutas certificados para oferecer a melhor experiência de cuidado.</p>
+  </div>
+
+  <!-- SERVIÇOS PRINCIPAIS -->
+  <section class="servicos-main">
+    <div class="container">
+
+      <div class="servico-destaque fade-in">
+        <div class="servico-info">
+          <span class="tag">Mais popular</span>
+          <h3>Massagem Relaxante Sueca</h3>
+          <p>A técnica clássica que combina movimentos longos e suaves, deslizamentos e amassamentos para liberar tensões acumuladas em todo o corpo. Perfeita para quem busca relaxamento profundo e alívio do estresse do dia a dia.</p>
+          <p>Indicada para: estresse, tensão muscular, fadiga, dificuldade para dormir e quem deseja um momento de descanso verdadeiro.</p>
+          <div class="detalhes">
+            <span class="detalhe"><span>⏱</span> 60 ou 90 minutos</span>
+            <span class="detalhe"><span>👤</span> Individual</span>
+            <span class="detalhe"><span>🌿</span> Com óleos essenciais</span>
+          </div>
+          <div class="preco-linha">
+            <span class="preco">R$ 120 – R$ 170</span>
+            <a href="contato.html" class="btn-agendar">Agendar →</a>
+          </div>
+        </div>
+        <div class="servico-visual">💆‍♀️</div>
+      </div>
+
+      <div class="servico-destaque reverse fade-in">
+        <div class="servico-info">
+          <span class="tag">Terapêutica</span>
+          <h3>Massagem Terapêutica Profunda</h3>
+          <p>Técnica que trabalha nas camadas mais profundas do tecido muscular, focando em pontos gatilho e nódulos de tensão. Indicada para dores crônicas, lesões musculares e para quem tem tensão severa acumulada.</p>
+          <p>Mais intensa que a sueca, é aplicada com pressão direcionada e deliberada para liberar padrões de tensão muscular persistentes.</p>
+          <div class="detalhes">
+            <span class="detalhe"><span>⏱</span> 60 ou 90 minutos</span>
+            <span class="detalhe"><span>💪</span> Alta pressão</span>
+            <span class="detalhe"><span>🎯</span> Foco em pontos</span>
+          </div>
+          <div class="preco-linha">
+            <span class="preco">R$ 150 – R$ 200</span>
+            <a href="contato.html" class="btn-agendar">Agendar →</a>
+          </div>
+        </div>
+        <div class="servico-visual">🪨</div>
+      </div>
+
+      <div class="servico-destaque fade-in">
+        <div class="servico-info">
+          <span class="tag">Premium</span>
+          <h3>Massagem com Pedras Quentes</h3>
+          <p>Uma experiência verdadeiramente luxuosa onde pedras basálticas vulcânicas aquecidas a temperatura ideal são combinadas com técnicas de massagem manual. O calor penetra profundamente nos músculos, promovendo relaxamento em um nível incomparável.</p>
+          <p>A combinação de calor e pressão libera tensões que técnicas convencionais levam muito mais tempo para resolver.</p>
+          <div class="detalhes">
+            <span class="detalhe"><span>⏱</span> 90 minutos</span>
+            <span class="detalhe"><span>🔥</span> Pedras vulcânicas</span>
+            <span class="detalhe"><span>✨</span> Experiência premium</span>
+          </div>
+          <div class="preco-linha">
+            <span class="preco">A partir de R$ 200</span>
+            <a href="contato.html" class="btn-agendar">Agendar →</a>
+          </div>
+        </div>
+        <div class="servico-visual">🌋</div>
+      </div>
+
+      <div class="servico-destaque reverse fade-in">
+        <div class="servico-info">
+          <span class="tag">Estético</span>
+          <h3>Drenagem Linfática</h3>
+          <p>Técnica especializada com movimentos suaves e rítmicos que estimulam o sistema linfático, auxiliando na eliminação de toxinas, redução de inchaços e tratamento da celulite. Ideal para pré e pós-operatório.</p>
+          <p>Muito procurada para redução de edemas, tratamento de celulite, manutenção da saúde e beleza da pele.</p>
+          <div class="detalhes">
+            <span class="detalhe"><span>⏱</span> 60 minutos</span>
+            <span class="detalhe"><span>🌊</span> Movimentos rítmicos</span>
+            <span class="detalhe"><span>💧</span> Elimina toxinas</span>
+          </div>
+          <div class="preco-linha">
+            <span class="preco">A partir de R$ 140</span>
+            <a href="contato.html" class="btn-agendar">Agendar →</a>
+          </div>
+        </div>
+        <div class="servico-visual">🫧</div>
+      </div>
+
+      <div class="servico-destaque fade-in">
+        <div class="servico-info">
+          <span class="tag">Oriental</span>
+          <h3>Shiatsu</h3>
+          <p>Técnica japonesa milenar baseada na aplicação de pressão com dedos, polegares e palmas em pontos específicos do corpo (meridianos). Equilibra a energia vital, alivia tensões e trata desequilíbrios físicos e emocionais.</p>
+          <p>Realizada com roupa leve e sem uso de óleos. Recomendada para quem busca equilíbrio energético e bem-estar holístico.</p>
+          <div class="detalhes">
+            <span class="detalhe"><span>⏱</span> 60 ou 90 minutos</span>
+            <span class="detalhe"><span>☯️</span> Técnica japonesa</span>
+            <span class="detalhe"><span>👗</span> Com roupa</span>
+          </div>
+          <div class="preco-linha">
+            <span class="preco">A partir de R$ 130</span>
+            <a href="contato.html" class="btn-agendar">Agendar →</a>
+          </div>
+        </div>
+        <div class="servico-visual">☯️</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PACOTES -->
+  <section class="pacotes">
+    <div class="container">
+      <div class="pacotes-header fade-in">
+        <p class="section-label">Economize mais</p>
+        <h2 class="section-title">Pacotes de sessões</h2>
+        <p style="color: var(--text-light); max-width:500px; margin: 0 auto;">Quanto mais você cuida de si, mais economiza. Escolha o pacote ideal para a sua rotina de bem-estar.</p>
+      </div>
+      <div class="pacotes-grid">
+        <div class="pacote-card fade-in">
+          <span class="pacote-badge">Starter</span>
+          <h3>Pacote Inicial</h3>
+          <div class="preco"><sup>R$</sup>330</div>
+          <p class="por-sessao">3 sessões — R$ 110/sessão</p>
+          <ul>
+            <li>3 massagens à sua escolha</li>
+            <li>Validade de 60 dias</li>
+            <li>Agendamento prioritário</li>
+            <li>Ficha de avaliação inclusa</li>
+          </ul>
+          <a href="contato.html" class="btn-pacote outline">Começar →</a>
+        </div>
+
+        <div class="pacote-card destaque fade-in">
+          <span class="pacote-badge">Mais popular</span>
+          <h3>Pacote Bem-estar</h3>
+          <div class="preco"><sup>R$</sup>580</div>
+          <p class="por-sessao">6 sessões — R$ 96/sessão</p>
+          <ul>
+            <li>6 massagens à sua escolha</li>
+            <li>Validade de 90 dias</li>
+            <li>Agendamento prioritário</li>
+            <li>Ficha de avaliação inclusa</li>
+            <li>1 sessão de aromaterapia grátis</li>
+            <li>Desconto em produtos</li>
+          </ul>
+          <a href="contato.html" class="btn-pacote">Escolher este →</a>
+        </div>
+
+        <div class="pacote-card fade-in">
+          <span class="pacote-badge">Premium</span>
+          <h3>Pacote Transformação</h3>
+          <div class="preco"><sup>R$</sup>1.020</div>
+          <p class="por-sessao">12 sessões — R$ 85/sessão</p>
+          <ul>
+            <li>12 massagens à sua escolha</li>
+            <li>Validade de 6 meses</li>
+            <li>Acesso VIP ao agenda</li>
+            <li>Avaliação postural completa</li>
+            <li>2 sessões premium grátis</li>
+            <li>Kit de óleos essenciais</li>
+          </ul>
+          <a href="contato.html" class="btn-pacote outline">Falar com a equipe →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diferenciais">
+    <div class="container">
+      <div class="fade-in" style="text-align:center; margin-bottom:0.5rem;">
+        <p class="section-label">Por que nos escolher?</p>
+        <h2 class="section-title">O padrão Movvi Spa</h2>
+      </div>
+      <div class="diferenciais-grid">
+        <div class="diferencial fade-in">
+          <div class="icon">🏆</div>
+          <h3>Terapeutas Certificados</h3>
+          <p>Todos com formação reconhecida e anos de experiência em técnicas nacionais e internacionais.</p>
+        </div>
+        <div class="diferencial fade-in">
+          <div class="icon">🌿</div>
+          <h3>Produtos Naturais</h3>
+          <p>Óleos e cremes selecionados, orgânicos e sem substâncias agressivas para pele sensível.</p>
+        </div>
+        <div class="diferencial fade-in">
+          <div class="icon">🛋️</div>
+          <h3>Ambiente Exclusivo</h3>
+          <p>Espaço projetado para máximo conforto, privacidade e imersão em uma atmosfera de relaxamento.</p>
+        </div>
+        <div class="diferencial fade-in">
+          <div class="icon">📋</div>
+          <h3>Atendimento Personalizado</h3>
+          <p>Cada sessão é adaptada às suas necessidades específicas após avaliação inicial completa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <h2>Qual serviço é ideal para você?</h2>
+      <p>Nossa equipe está pronta para ajudá-lo a escolher a terapia certa para suas necessidades.</p>
+      <a href="contato.html" class="btn-primary">Agendar consulta →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(8,10)">
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(-30,22,32)"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(30,22,32)"/>
+          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#A8CC60"/>
+          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(-50,10,34)"/>
+          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(50,34,34)"/>
+          <line x1="4" y1="44" x2="40" y2="44" stroke="#8AAE4A" stroke-width="1.5"/>
+        </g>
+        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#F5F0E6">Movvi</text>
+        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="rgba(245,240,230,0.8)">Spa</text>
+      </svg>
+    </div>
+    <p>Restaurando equilíbrio entre corpo e mente.</p>
+    <p style="font-size:0.8rem; margin-top:0.5rem;">© 2025 Movvi Spa. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="beneficios.html">Benefícios</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
