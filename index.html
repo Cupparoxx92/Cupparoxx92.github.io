@@ -30,60 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 0 3rem;
-      height: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(245, 240, 230, 0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(106, 140, 53, 0.2);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-
-    .nav-logo svg { height: 38px; }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.25s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--olive); }
-
-    .nav-cta {
-      background: var(--green-dark);
-      color: var(--cream) !important;
-      padding: 0.55rem 1.4rem;
-      border-radius: 30px;
-      font-weight: 700 !important;
-    }
-
-    .nav-cta:hover { background: var(--olive) !important; color: var(--white) !important; }
-
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -465,44 +411,170 @@
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0 1.5rem; }
       section { padding: 4rem 1.5rem; }
       .hero { padding: 90px 1.5rem 3rem; }
-      .nav-links { display: none; }
       .beneficios-grid,
       .servicos-grid { grid-template-columns: 1fr; }
       .sobre-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── SIDEBAR ── */
+    :root { --sidebar-w: 240px; }
+
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--green-dark);
+      display: flex;
+      flex-direction: column;
+      z-index: 200;
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+    }
+    .sidebar-logo {
+      padding: 2rem 1.6rem 1.5rem;
+      border-bottom: 1px solid rgba(138,174,74,0.2);
+      text-decoration: none;
+      display: block;
+    }
+    .sidebar-logo svg { width: 140px; }
+    .sidebar-nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 0;
+      overflow-y: auto;
+    }
+    .sidebar-nav a {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1.6rem;
+      color: rgba(245,240,230,0.7);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+    .sidebar-nav a:hover {
+      color: var(--cream);
+      background: rgba(138,174,74,0.1);
+      border-left-color: var(--olive-light);
+    }
+    .sidebar-nav a.active {
+      color: var(--olive-light);
+      background: rgba(138,174,74,0.12);
+      border-left-color: var(--olive-light);
+      font-weight: 700;
+    }
+    .sidebar-nav .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .sidebar-nav .nav-divider {
+      height: 1px;
+      background: rgba(138,174,74,0.15);
+      margin: 0.8rem 1.6rem;
+    }
+    .sidebar-cta {
+      padding: 1.5rem 1.6rem;
+      border-top: 1px solid rgba(138,174,74,0.2);
+    }
+    .sidebar-cta a {
+      display: block;
+      background: var(--olive);
+      color: var(--white);
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .sidebar-cta a:hover { background: var(--olive-light); transform: translateY(-2px); }
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 1rem; left: 1rem;
+      z-index: 300;
+      background: var(--green-dark);
+      border: none;
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 150;
+    }
+    .main { margin-left: var(--sidebar-w); }
+
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; }
+      .hamburger { display: flex; }
+      .overlay.open { display: block; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="sidebar-logo">
       <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-        <!-- Lotus -->
         <g transform="translate(8,10)">
-          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(-30,22,32)"/>
-          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#6A8C35" transform="rotate(30,22,32)"/>
-          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#8AAE4A"/>
-          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(-50,10,34)"/>
-          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#6A8C35" transform="rotate(50,34,34)"/>
-          <line x1="4" y1="44" x2="40" y2="44" stroke="#6A8C35" stroke-width="1.5"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(-30,22,32)"/>
+          <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(30,22,32)"/>
+          <ellipse cx="22" cy="28" rx="6" ry="13" fill="#A8CC60"/>
+          <ellipse cx="10" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(-50,10,34)"/>
+          <ellipse cx="34" cy="34" rx="5" ry="11" fill="#8AAE4A" transform="rotate(50,34,34)"/>
+          <line x1="4" y1="44" x2="40" y2="44" stroke="#8AAE4A" stroke-width="1.5"/>
         </g>
-        <!-- Text -->
-        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#2D4939">Movvi</text>
-        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="#3D5E4A">Spa</text>
+        <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#F5F0E6">Movvi</text>
+        <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="rgba(245,240,230,0.8)">Spa</text>
       </svg>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Início</a></li>
-      <li><a href="empresa.html">Empresa</a></li>
-      <li><a href="beneficios.html">Benefícios</a></li>
-      <li><a href="servicos.html">Serviços</a></li>
-      <li><a href="contato.html" class="nav-cta">Agendar</a></li>
-    </ul>
-  </nav>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="active"><span class="nav-icon">🏠</span> Início</a>
+      <a href="empresa.html"><span class="nav-icon">🏢</span> Empresas</a>
+      <div class="nav-divider"></div>
+      <a href="beneficios.html"><span class="nav-icon">✨</span> Benefícios</a>
+      <a href="servicos.html"><span class="nav-icon">💆</span> Serviços</a>
+    </nav>
+    <div class="sidebar-cta">
+      <a href="contato.html">Agendar sessão</a>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+  <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="main">
 
   <!-- HERO -->
   <section class="hero">
@@ -666,6 +738,16 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  </div><!-- /.main -->
+
+  <script>
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+    }
   </script>
 </body>
 </html>
