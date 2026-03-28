@@ -74,6 +74,19 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--olive); }
 
+    .nav-links a.nav-empresa {
+      color: var(--green-dark);
+      font-weight: 700;
+      border-bottom: 2px solid var(--green-dark);
+      padding-bottom: 2px;
+    }
+
+    .nav-links a.nav-empresa:hover,
+    .nav-links a.nav-empresa.active {
+      color: var(--green-mid);
+      border-bottom-color: var(--green-mid);
+    }
+
     .nav-cta {
       background: var(--green-dark);
       color: var(--cream) !important;
@@ -497,7 +510,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Início</a></li>
-      <li><a href="empresa.html">Empresa</a></li>
+      <li><a href="empresa.html" class="nav-empresa">Empresa</a></li>
       <li><a href="beneficios.html">Benefícios</a></li>
       <li><a href="servicos.html">Serviços</a></li>
       <li><a href="contato.html" class="nav-cta">Agendar</a></li>
