@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empresa — Movvi Spa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Para Empresas — Movvi Spa Corporativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream:       #F5F0E6;
-      --cream-dark:  #EDE7D9;
-      --green-dark:  #2D4939;
-      --green-mid:   #3D5E4A;
-      --olive:       #6A8C35;
-      --olive-light: #8AAE4A;
-      --olive-pale:  #D4E4B0;
-      --white:       #FFFFFF;
-      --text:        #2D4939;
-      --text-light:  #5A7A6A;
+      --corp-bg:     #FFFFFF;
+      --corp-dark:   #1A2E26;
+      --corp-green:  #2D4939;
+      --corp-mid:    #3D5E4A;
+      --corp-olive:  #6A8C35;
+      --corp-light:  #8AAE4A;
+      --corp-pale:   #EFF5E6;
+      --corp-border: #D0DDD4;
+      --corp-gray:   #F7F9F7;
+      --text:        #1A2E26;
+      --text-mid:    #3D5E4A;
+      --text-light:  #637A6E;
+      --sidebar-w:   240px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,424 +27,19 @@
 
     body {
       font-family: 'Lato', sans-serif;
-      background: var(--cream);
+      background: var(--corp-bg);
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ── PAGE HERO ── */
-    .page-hero {
-      background: var(--green-dark);
-      padding: 120px 3rem 70px;
-      text-align: center;
-      color: var(--cream);
-    }
-
-    .page-hero .label {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--olive-light);
-      border: 1px solid var(--olive);
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-    }
-
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .page-hero h1 em { font-style: italic; color: var(--olive-light); }
-
-    .page-hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      color: rgba(245,240,230,0.8);
-    }
-
-    /* ── SECTIONS ── */
-    section { padding: 6rem 3rem; }
-
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--olive);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 400;
-      margin-bottom: 1.2rem;
-      line-height: 1.3;
-    }
-
-    .section-title em { font-style: italic; color: var(--olive); }
-
-    .section-subtitle {
-      color: var(--text-light);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── HISTÓRIA ── */
-    .historia { background: var(--cream); }
-
-    .historia-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .historia-texto p {
-      color: var(--text-light);
-      margin-bottom: 1rem;
-      font-size: 1.02rem;
-    }
-
-    .historia-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-
-    .stat-card {
-      background: var(--cream-dark);
-      border: 1px solid rgba(106,140,53,0.2);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .stat-card strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--olive);
-      margin-bottom: 0.3rem;
-    }
-
-    .stat-card span {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    .historia-visual {
-      background: var(--green-dark);
-      border-radius: 16px;
-      min-height: 380px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-
-    .historia-visual .big-icon {
-      font-size: 5rem;
-      line-height: 1;
-    }
-
-    .historia-visual p {
-      color: rgba(245,240,230,0.8);
-      text-align: center;
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      max-width: 260px;
-    }
-
-    /* ── MISSÃO VISÃO VALORES ── */
-    .mvv { background: var(--cream-dark); }
-
-    .mvv-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .mvv-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 2.5rem 2rem;
-      border-top: 4px solid var(--olive);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .mvv-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(45,73,57,0.12);
-    }
-
-    .mvv-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .mvv-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--green-dark);
-    }
-
-    .mvv-card p {
-      font-size: 0.97rem;
-      color: var(--text-light);
-      line-height: 1.7;
-    }
-
-    /* ── VALORES LISTA ── */
-    .valores { background: var(--green-dark); color: var(--cream); }
-
-    .valores .section-label { color: var(--olive-light); }
-    .valores .section-title em { color: var(--olive-light); }
-
-    .valores-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .valor-item {
-      background: rgba(245,240,230,0.07);
-      border: 1px solid rgba(138,174,74,0.25);
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: background 0.25s;
-    }
-
-    .valor-item:hover { background: rgba(245,240,230,0.12); }
-
-    .valor-icon { font-size: 2rem; margin-bottom: 1rem; }
-
-    .valor-item h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      color: var(--olive-pale);
-    }
-
-    .valor-item p {
-      font-size: 0.88rem;
-      color: rgba(245,240,230,0.7);
-    }
-
-    /* ── EQUIPE ── */
-    .equipe { background: var(--cream); }
-
-    .equipe-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .membro-card {
-      background: var(--white);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(45,73,57,0.08);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .membro-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(45,73,57,0.14);
-    }
-
-    .membro-avatar {
-      background: linear-gradient(135deg, var(--green-mid), var(--olive));
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-
-    .membro-info { padding: 1.5rem; }
-
-    .membro-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      margin-bottom: 0.3rem;
-      color: var(--green-dark);
-    }
-
-    .membro-cargo {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--olive);
-      margin-bottom: 0.75rem;
-    }
-
-    .membro-info p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    /* ── DIFERENCIAIS ── */
-    .diferenciais { background: var(--cream-dark); }
-
-    .diferenciais-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .diferencial-item {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      background: var(--white);
-      border-radius: 12px;
-      padding: 1.8rem;
-      border-left: 4px solid var(--olive);
-    }
-
-    .diferencial-icon { font-size: 2rem; flex-shrink: 0; }
-
-    .diferencial-item h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-      color: var(--green-dark);
-    }
-
-    .diferencial-item p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: linear-gradient(135deg, var(--olive) 0%, var(--green-dark) 100%);
-      text-align: center;
-      padding: 6rem 3rem;
-      color: var(--cream);
-    }
-
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .cta-section p {
-      font-size: 1.05rem;
-      color: rgba(245,240,230,0.85);
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .btn-cream {
-      display: inline-block;
-      background: var(--cream);
-      color: var(--green-dark);
-      text-decoration: none;
-      padding: 0.9rem 2.2rem;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      transition: background 0.25s, color 0.25s;
-    }
-
-    .btn-cream:hover { background: var(--white); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--green-dark);
-      color: rgba(245,240,230,0.7);
-      text-align: center;
-      padding: 3rem 2rem;
-    }
-
-    footer .footer-logo { margin-bottom: 1rem; }
-    footer .footer-logo svg { height: 50px; }
-    footer p { font-size: 0.9rem; margin-bottom: 0.4rem; }
-
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    footer .footer-links a {
-      text-decoration: none;
-      color: rgba(245,240,230,0.6);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: color 0.25s;
-    }
-
-    footer .footer-links a:hover { color: var(--olive-light); }
-
-    /* ── FADE-IN ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .historia-grid { grid-template-columns: 1fr; }
-      .mvv-grid { grid-template-columns: 1fr; }
-      .valores-grid { grid-template-columns: 1fr 1fr; }
-      .equipe-grid { grid-template-columns: 1fr 1fr; }
-      .diferenciais-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 4rem 1.5rem; }
-      .page-hero { padding: 110px 1.5rem 60px; }
-      .valores-grid { grid-template-columns: 1fr 1fr; }
-      .equipe-grid { grid-template-columns: 1fr; }
-      .historia-stats { grid-template-columns: 1fr 1fr; }
-    }
-
     /* ── SIDEBAR ── */
-    :root { --sidebar-w: 240px; }
-
     .sidebar {
       position: fixed;
       top: 0; left: 0;
       width: var(--sidebar-w);
       height: 100vh;
-      background: var(--green-dark);
+      background: var(--corp-dark);
       display: flex;
       flex-direction: column;
       z-index: 200;
@@ -477,14 +75,14 @@
       border-left: 3px solid transparent;
     }
     .sidebar-nav a:hover {
-      color: var(--cream);
+      color: #F5F0E6;
       background: rgba(138,174,74,0.1);
-      border-left-color: var(--olive-light);
+      border-left-color: var(--corp-light);
     }
     .sidebar-nav a.active {
-      color: var(--olive-light);
+      color: var(--corp-light);
       background: rgba(138,174,74,0.12);
-      border-left-color: var(--olive-light);
+      border-left-color: var(--corp-light);
       font-weight: 700;
     }
     .sidebar-nav .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
@@ -499,8 +97,8 @@
     }
     .sidebar-cta a {
       display: block;
-      background: var(--olive);
-      color: var(--white);
+      background: var(--corp-olive);
+      color: #fff;
       text-align: center;
       padding: 0.8rem;
       border-radius: 30px;
@@ -509,15 +107,16 @@
       font-size: 0.88rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: background 0.25s, transform 0.2s;
+      transition: background 0.25s;
     }
-    .sidebar-cta a:hover { background: var(--olive-light); transform: translateY(-2px); }
+    .sidebar-cta a:hover { background: var(--corp-light); }
+
     .hamburger {
       display: none;
       position: fixed;
       top: 1rem; left: 1rem;
       z-index: 300;
-      background: var(--green-dark);
+      background: var(--corp-dark);
       border: none;
       width: 44px; height: 44px;
       border-radius: 10px;
@@ -531,7 +130,7 @@
     .hamburger span {
       display: block;
       width: 22px; height: 2px;
-      background: var(--cream);
+      background: #F5F0E6;
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -545,14 +144,509 @@
       background: rgba(0,0,0,0.5);
       z-index: 150;
     }
+
+    /* ── MAIN ── */
     .main { margin-left: var(--sidebar-w); }
 
+    /* ── HERO ── */
+    .hero {
+      background: var(--corp-dark);
+      padding: 5rem 5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      min-height: 72vh;
+    }
+
+    .hero-text { padding-bottom: 5rem; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--corp-light);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--corp-olive);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .hero h1 span {
+      color: var(--corp-light);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--corp-olive);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover { background: var(--corp-light); transform: translateY(-2px); }
+
+    .hero-metrics {
+      background: var(--corp-green);
+      padding: 3rem 3rem 4rem;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+
+    .metric {
+      border-left: 3px solid var(--corp-olive);
+      padding-left: 1.2rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #FFFFFF;
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .metric span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    /* ── SECTIONS ── */
+    .container { max-width: 1020px; margin: 0 auto; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--corp-olive);
+      margin-bottom: 1rem;
+    }
+
+    .tag::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--corp-olive);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      color: var(--corp-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* ── QVT ── */
+    .qvt { padding: 6rem 5rem; background: #fff; }
+
+    .qvt-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .qvt-intro p {
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+
+    .qvt-highlight {
+      background: var(--corp-dark);
+      border-radius: 4px;
+      padding: 2.5rem;
+    }
+
+    .qvt-highlight blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: #fff;
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .qvt-highlight cite {
+      font-size: 0.8rem;
+      color: var(--corp-light);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .qvt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--corp-border);
+      border: 1px solid var(--corp-border);
+    }
+
+    .qvt-card {
+      background: #fff;
+      padding: 2rem 1.8rem;
+      transition: background 0.2s;
+    }
+
+    .qvt-card:hover { background: var(--corp-gray); }
+
+    .qvt-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--corp-olive);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .qvt-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--corp-dark);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .qvt-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ── MODALIDADES ── */
+    .modalidades { padding: 6rem 5rem; background: var(--corp-gray); }
+
+    .modalidades-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--corp-border);
+      padding-bottom: 2.5rem;
+    }
+
+    .modalidades-header p { color: var(--text-light); font-size: 1rem; }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .modal-card {
+      background: #fff;
+      border: 1px solid var(--corp-border);
+      border-top: 3px solid var(--corp-olive);
+      padding: 2rem;
+      transition: box-shadow 0.25s, border-top-color 0.25s;
+    }
+
+    .modal-card:hover {
+      box-shadow: 0 8px 32px rgba(26,46,38,0.08);
+      border-top-color: var(--corp-dark);
+    }
+
+    .modal-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .modal-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--corp-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .modal-card ul {
+      list-style: none;
+    }
+
+    .modal-card ul li {
+      font-size: 0.83rem;
+      color: var(--text-mid);
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-card ul li::before {
+      content: '—';
+      color: var(--corp-olive);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── PROCESSO ── */
+    .processo { padding: 6rem 5rem; background: var(--corp-dark); }
+
+    .processo .tag { color: var(--corp-light); }
+    .processo .tag::before { background: var(--corp-light); }
+    .processo h2 { color: #fff; }
+
+    .processo-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step {
+      padding: 2.5rem 2rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    .step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: var(--corp-olive);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .step h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ── CTA ── */
+    .cta { padding: 0; background: #fff; }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 380px;
+    }
+
+    .cta-text {
+      background: var(--corp-olive);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cta-text .tag { color: rgba(255,255,255,0.7); }
+    .cta-text .tag::before { background: rgba(255,255,255,0.5); }
+
+    .cta-text h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .cta-text p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: var(--corp-olive);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .btn-white:hover { background: var(--corp-dark); color: #fff; }
+
+    .cta-contacts {
+      background: var(--corp-gray);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .contact-line:hover { color: var(--corp-olive); }
+
+    .contact-line .c-icon {
+      width: 48px; height: 48px;
+      background: var(--corp-dark);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-line h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-line p {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--corp-dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--corp-dark);
+      padding: 2.5rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer svg { height: 36px; }
+
+    footer p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    footer .footer-links a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover { color: var(--corp-light); }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .sidebar { transform: translateX(-100%); }
       .sidebar.open { transform: translateX(0); }
       .main { margin-left: 0; }
       .hamburger { display: flex; }
       .overlay.open { display: block; }
+
+      .hero { grid-template-columns: 1fr; padding: 4rem 2rem 0; min-height: auto; }
+      .hero-metrics { padding: 2.5rem 2rem; flex-direction: row; flex-wrap: wrap; }
+      .qvt, .modalidades, .processo { padding: 4rem 2rem; }
+      .qvt-top { grid-template-columns: 1fr; gap: 2rem; }
+      .qvt-grid { grid-template-columns: 1fr 1fr; }
+      .modalidades-header { grid-template-columns: 1fr; gap: 1rem; }
+      .modal-grid { grid-template-columns: 1fr; }
+      .processo-steps { grid-template-columns: 1fr 1fr; }
+      .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-text, .cta-contacts { padding: 3rem 2rem; }
+      footer { padding: 2rem; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .qvt-grid { grid-template-columns: 1fr; }
+      .processo-steps { grid-template-columns: 1fr; }
+      .hero-metrics { flex-direction: column; }
     }
   </style>
 </head>
@@ -589,201 +683,211 @@
   <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
+
   <div class="main">
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <span class="label">Quem somos</span>
-    <h1>Conheça a <em>Movvi Spa</em></h1>
-    <p>Uma história construída com dedicação, amor ao cuidado e o compromisso de transformar vidas através do bem-estar.</p>
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text fade-in">
+        <span class="hero-eyebrow">Soluções Corporativas</span>
+        <h1>Bem-estar que gera <span>resultados</span> para a sua empresa</h1>
+        <p class="hero-desc">Programas de massagem terapêutica para eventos corporativos, semanas de QVT e ações de engajamento. Levamos o cuidado até a sua equipe — em Florianópolis e região.</p>
+        <a href="#contato" class="hero-cta">Solicitar orçamento →</a>
+      </div>
+      <div class="hero-metrics fade-in">
+        <div class="metric">
+          <strong>72%</strong>
+          <span>de redução de estresse relatada por colaboradores em programas de QVT</span>
+        </div>
+        <div class="metric">
+          <strong>40%</strong>
+          <span>menos absenteísmo em empresas com ações regulares de bem-estar</span>
+        </div>
+        <div class="metric">
+          <strong>3×</strong>
+          <span>mais retenção de talentos em organizações com benefícios de saúde</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- HISTÓRIA -->
-  <section class="historia">
-    <div class="container">
-      <div class="historia-grid">
-        <div class="historia-texto fade-in">
-          <p class="section-label">Nossa história</p>
-          <h2 class="section-title">Cuidado que <em>transforma</em> vidas</h2>
-          <p>A Movvi Spa nasceu da paixão pelo bem-estar e da convicção de que cada pessoa merece um espaço de cuidado genuíno. Fundada em Florianópolis/SC, nossa trajetória começou com um único propósito: oferecer terapias de massagem que vão além do relaxamento superficial.</p>
-          <p>Ao longo dos anos, construímos uma equipe de terapeutas certificados e aperfeiçoamos nossas técnicas, combinando o melhor das tradições terapêuticas com as metodologias mais modernas da saúde integrativa.</p>
-          <p>Hoje, somos referência em bem-estar na região, atendendo milhares de clientes que buscam qualidade de vida, alívio de dores e o equilíbrio entre corpo e mente.</p>
-          <div class="historia-stats">
-            <div class="stat-card fade-in">
-              <strong>8+</strong>
-              <span>Anos de experiência</span>
-            </div>
-            <div class="stat-card fade-in">
-              <strong>2.000+</strong>
-              <span>Clientes atendidos</span>
-            </div>
-            <div class="stat-card fade-in">
-              <strong>15+</strong>
-              <span>Técnicas de massagem</span>
-            </div>
-            <div class="stat-card fade-in">
-              <strong>100%</strong>
-              <span>Satisfação garantida</span>
-            </div>
+    <!-- QVT -->
+    <section class="qvt">
+      <div class="container">
+        <div class="qvt-top fade-in">
+          <div class="qvt-intro">
+            <span class="tag">QVT — Qualidade de Vida no Trabalho</span>
+            <h2>Por que investir em bem-estar corporativo?</h2>
+            <p>Colaboradores saudáveis e equilibrados produzem mais, erram menos e permanecem mais tempo nas empresas. A massagem terapêutica é uma das intervenções de QVT com maior impacto comprovado no ambiente de trabalho.</p>
+            <p>A Movvi Spa oferece programas sob medida — desde uma ação pontual até um programa mensal estruturado — para empresas que entendem que cuidar de pessoas é cuidar do negócio.</p>
+          </div>
+          <div class="qvt-highlight">
+            <blockquote>"Cada R$ 1 investido em saúde e bem-estar corporativo retorna em média R$ 2,30 em produtividade e redução de custos com saúde."</blockquote>
+            <cite>— Harvard Business Review</cite>
           </div>
         </div>
-        <div class="historia-visual fade-in">
-          <div class="big-icon">🌿</div>
-          <p>"Restaurando o equilíbrio entre corpo e mente, uma sessão de cada vez."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSÃO, VISÃO E PROPÓSITO -->
-  <section class="mvv">
-    <div class="container">
-      <div class="fade-in" style="text-align:center;">
-        <p class="section-label">Nossa essência</p>
-        <h2 class="section-title">Missão, Visão e <em>Propósito</em></h2>
-        <p class="section-subtitle" style="margin: 0 auto 0;">O que nos guia todos os dias no cuidado com as pessoas.</p>
-      </div>
-      <div class="mvv-grid">
-        <div class="mvv-card fade-in">
-          <div class="mvv-icon">🎯</div>
-          <h3>Missão</h3>
-          <p>Proporcionar experiências terapêuticas de excelência que restaurem o equilíbrio físico e emocional de cada cliente, promovendo saúde, bem-estar e qualidade de vida através de técnicas de massagem especializadas e atendimento humanizado.</p>
-        </div>
-        <div class="mvv-card fade-in">
-          <div class="mvv-icon">🔭</div>
-          <h3>Visão</h3>
-          <p>Ser reconhecida como o espaço de referência em bem-estar e terapias de massagem em Florianópolis, expandindo o acesso a cuidados terapêuticos de qualidade e inspirando uma cultura de autocuidado e saúde preventiva.</p>
-        </div>
-        <div class="mvv-card fade-in">
-          <div class="mvv-icon">💚</div>
-          <h3>Propósito</h3>
-          <p>Acreditamos que bem-estar não é luxo — é necessidade. Nosso propósito é democratizar o acesso a terapias de qualidade, cuidando de cada pessoa como única, com respeito, dedicação e a expertise de quem realmente ama o que faz.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALORES -->
-  <section class="valores">
-    <div class="container">
-      <div class="fade-in" style="text-align:center;">
-        <p class="section-label">O que nos define</p>
-        <h2 class="section-title" style="color:var(--cream);">Nossos <em>Valores</em></h2>
-        <p class="section-subtitle" style="margin: 0 auto; color:rgba(245,240,230,0.75);">Princípios que orientam cada atendimento e cada decisão.</p>
-      </div>
-      <div class="valores-grid">
-        <div class="valor-item fade-in">
-          <div class="valor-icon">🤝</div>
-          <h4>Humanização</h4>
-          <p>Cada cliente é tratado com empatia, respeito e atenção individual às suas necessidades.</p>
-        </div>
-        <div class="valor-item fade-in">
-          <div class="valor-icon">⭐</div>
-          <h4>Excelência</h4>
-          <p>Buscamos a perfeição em cada técnica, atualização constante e padrão elevado de qualidade.</p>
-        </div>
-        <div class="valor-item fade-in">
-          <div class="valor-icon">🌱</div>
-          <h4>Cuidado Integral</h4>
-          <p>Olhamos para o ser humano como um todo: corpo, mente e emoções conectados.</p>
-        </div>
-        <div class="valor-item fade-in">
-          <div class="valor-icon">🔒</div>
-          <h4>Ética & Confiança</h4>
-          <p>Ambiente seguro, sigiloso e respeitoso, onde o cliente se sente à vontade e protegido.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EQUIPE -->
-  <section class="equipe">
-    <div class="container">
-      <div class="fade-in" style="text-align:center;">
-        <p class="section-label">Quem cuida de você</p>
-        <h2 class="section-title">Nossa <em>Equipe</em></h2>
-        <p class="section-subtitle" style="margin: 0 auto;">Terapeutas certificados, apaixonados pelo cuidado e em constante atualização.</p>
-      </div>
-      <div class="equipe-grid">
-        <div class="membro-card fade-in">
-          <div class="membro-avatar">👩‍⚕️</div>
-          <div class="membro-info">
-            <h3>Ana Paula Souza</h3>
-            <span class="membro-cargo">Terapeuta Sênior & Fundadora</span>
-            <p>Mais de 10 anos de experiência em massoterapia. Especialista em massagem terapêutica, relaxante e técnicas orientais. Pós-graduada em Saúde Integrativa.</p>
+        <div class="qvt-grid fade-in">
+          <div class="qvt-card">
+            <div class="num">01</div>
+            <h3>Redução do Estresse</h3>
+            <p>Menos cortisol, mais clareza. Colaboradores relaxados tomam melhores decisões e se comunicam com mais eficiência.</p>
           </div>
-        </div>
-        <div class="membro-card fade-in">
-          <div class="membro-avatar">👨‍⚕️</div>
-          <div class="membro-info">
-            <h3>Carlos Mendes</h3>
-            <span class="membro-cargo">Especialista em Terapias Corporais</span>
-            <p>Certificado em ventosaterapia, massagem miofascial e drenagem linfática. Referência no tratamento de dores crônicas e lesões musculares.</p>
+          <div class="qvt-card">
+            <div class="num">02</div>
+            <h3>Ganho de Produtividade</h3>
+            <p>Corpo livre de tensões significa mente focada. Sessões regulares reduzem erros e aumentam a concentração.</p>
           </div>
-        </div>
-        <div class="membro-card fade-in">
-          <div class="membro-avatar">👩‍⚕️</div>
-          <div class="membro-info">
-            <h3>Juliana Costa</h3>
-            <span class="membro-cargo">Terapeuta & Esteticista</span>
-            <p>Especialista em massagens estéticas, pedras quentes e técnicas de relaxamento profundo. Formada em estética e cosmetologia com foco em bem-estar.</p>
+          <div class="qvt-card">
+            <div class="num">03</div>
+            <h3>Clima Organizacional</h3>
+            <p>Ações de cuidado criam senso de pertencimento e valorização, fortalecendo cultura e reduzindo turnover.</p>
+          </div>
+          <div class="qvt-card">
+            <div class="num">04</div>
+            <h3>Menos Afastamentos</h3>
+            <p>Dores musculares são a principal causa de afastamento. A massagem previne e trata antes de virar problema.</p>
+          </div>
+          <div class="qvt-card">
+            <div class="num">05</div>
+            <h3>Employer Branding</h3>
+            <p>Empresas que cuidam das pessoas atraem melhores talentos e se destacam no mercado como empregadores de referência.</p>
+          </div>
+          <div class="qvt-card">
+            <div class="num">06</div>
+            <h3>Engajamento</h3>
+            <p>Colaboradores que se sentem cuidados são mais engajados, proativos e comprometidos com os resultados da empresa.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DIFERENCIAIS -->
-  <section class="diferenciais">
-    <div class="container">
-      <div class="fade-in" style="text-align:center;">
-        <p class="section-label">Por que nos escolher</p>
-        <h2 class="section-title">Nossos <em>Diferenciais</em></h2>
-        <p class="section-subtitle" style="margin: 0 auto;">O que faz a Movvi Spa ser única no cuidado com o seu bem-estar.</p>
-      </div>
-      <div class="diferenciais-grid">
-        <div class="diferencial-item fade-in">
-          <div class="diferencial-icon">🏆</div>
+    <!-- MODALIDADES -->
+    <section class="modalidades">
+      <div class="container">
+        <div class="modalidades-header fade-in">
           <div>
-            <h4>Terapeutas Certificados</h4>
-            <p>Toda a nossa equipe possui certificações reconhecidas e passa por atualização contínua nas melhores técnicas terapêuticas.</p>
+            <span class="tag">Modalidades de atendimento</span>
+            <h2>Como podemos atender a sua empresa</h2>
           </div>
+          <p>Adaptamos cada programa às necessidades, porte e cultura da sua organização. Do evento pontual ao programa contínuo.</p>
         </div>
-        <div class="diferencial-item fade-in">
-          <div class="diferencial-icon">🌿</div>
-          <div>
-            <h4>Ambiente Pensado para Você</h4>
-            <p>Espaço cuidadosamente projetado para proporcionar paz, conforto e privacidade desde o momento em que você entra.</p>
+        <div class="modal-grid">
+          <div class="modal-card fade-in">
+            <span class="icon">🏢</span>
+            <h3>Semana de QVT</h3>
+            <p>Programação estruturada de bem-estar durante um ou mais dias, com estações de massagem e múltiplas modalidades terapêuticas.</p>
+            <ul>
+              <li>Quick massage (15–20 min por colaborador)</li>
+              <li>Drenagem linfática</li>
+              <li>Ventosaterapia</li>
+              <li>Liberação miofascial</li>
+            </ul>
           </div>
-        </div>
-        <div class="diferencial-item fade-in">
-          <div class="diferencial-icon">🎨</div>
-          <div>
-            <h4>Atendimento Personalizado</h4>
-            <p>Cada sessão é adaptada às suas necessidades específicas. Não existem protocolos únicos — existe o seu protocolo.</p>
+          <div class="modal-card fade-in">
+            <span class="icon">📅</span>
+            <h3>Programa Mensal</h3>
+            <p>Presença recorrente da Movvi Spa na sua empresa — semanal ou quinzenal — com acompanhamento e evolução dos colaboradores.</p>
+            <ul>
+              <li>Cronograma fixo e personalizado</li>
+              <li>Ficha individual por colaborador</li>
+              <li>Relatório de evolução</li>
+              <li>Gestão via agenda exclusiva</li>
+            </ul>
           </div>
-        </div>
-        <div class="diferencial-item fade-in">
-          <div class="diferencial-icon">📍</div>
-          <div>
-            <h4>Localização Central em Florianópolis</h4>
-            <p>Fácil acesso, estacionamento próximo e horários flexíveis para encaixar no seu dia a dia sem complicações.</p>
+          <div class="modal-card fade-in">
+            <span class="icon">🎯</span>
+            <h3>Eventos Corporativos</h3>
+            <p>Convenções, confraternizações, lançamentos e encontros de liderança ganham uma experiência diferenciada com a presença da Movvi Spa.</p>
+            <ul>
+              <li>Estação de bem-estar no evento</li>
+              <li>Branding personalizado</li>
+              <li>Equipe treinada e uniformizada</li>
+              <li>Atendimento simultâneo em múltiplas estações</li>
+            </ul>
+          </div>
+          <div class="modal-card fade-in">
+            <span class="icon">🎉</span>
+            <h3>Eventos Particulares</h3>
+            <p>Aniversários, despedidas, chás de bebê, retiros e eventos VIP com atendimento de massagem como experiência premium para os convidados.</p>
+            <ul>
+              <li>Personalização total do ambiente</li>
+              <li>Diferentes modalidades disponíveis</li>
+              <li>Atendimento individual ou em grupo</li>
+              <li>Experiências temáticas sob consulta</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2>Venha nos conhecer pessoalmente</h2>
-    <p>Agende sua primeira sessão e descubra por que somos a escolha de mais de 2.000 clientes satisfeitos.</p>
-    <a href="contato.html" class="btn-cream">Agendar minha sessão →</a>
-  </section>
+    <!-- PROCESSO -->
+    <section class="processo">
+      <div class="container">
+        <div class="fade-in">
+          <span class="tag">Processo</span>
+          <h2>Do contato à execução — simples e sem burocracia</h2>
+        </div>
+        <div class="processo-steps">
+          <div class="step fade-in">
+            <span class="step-num">Passo 01</span>
+            <h4>Contato inicial</h4>
+            <p>Envie-nos uma mensagem com os dados básicos do seu evento ou necessidade. Respondemos em até 24 horas úteis.</p>
+          </div>
+          <div class="step fade-in">
+            <span class="step-num">Passo 02</span>
+            <h4>Proposta personalizada</h4>
+            <p>Elaboramos uma proposta sob medida, considerando número de participantes, duração, modalidades e logística.</p>
+          </div>
+          <div class="step fade-in">
+            <span class="step-num">Passo 03</span>
+            <h4>Alinhamento e confirmação</h4>
+            <p>Ajustamos os detalhes em conjunto, confirmamos data, local e equipe necessária para o atendimento.</p>
+          </div>
+          <div class="step fade-in">
+            <span class="step-num">Passo 04</span>
+            <h4>Execução e resultado</h4>
+            <p>Nossa equipe chega preparada e pontual. Você recebe um relatório de atendimento ao final do programa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">
+    <!-- CTA -->
+    <section class="cta" id="contato">
+      <div class="cta-inner">
+        <div class="cta-text fade-in">
+          <span class="tag">Solicite agora</span>
+          <h2>Pronto para cuidar da sua equipe?</h2>
+          <p>Entre em contato e receba uma proposta personalizada sem compromisso. Atendemos empresas de todos os portes em Florianópolis e região.</p>
+          <a href="contato.html" class="btn-white">Solicitar orçamento gratuito →</a>
+        </div>
+        <div class="cta-contacts fade-in">
+          <a href="https://wa.me/5548999999999" class="contact-line">
+            <div class="c-icon">📱</div>
+            <div>
+              <h4>WhatsApp Corporativo</h4>
+              <p>(48) 99999-9999</p>
+            </div>
+          </a>
+          <a href="mailto:corporativo@movvispa.com.br" class="contact-line">
+            <div class="c-icon">✉️</div>
+            <div>
+              <h4>E-mail Corporativo</h4>
+              <p>corporativo@movvispa.com.br</p>
+            </div>
+          </a>
+          <a href="contato.html" class="contact-line">
+            <div class="c-icon">📋</div>
+            <div>
+              <h4>Formulário de orçamento</h4>
+              <p>Preencha online — resposta em 24h</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
       <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(8,10)">
           <ellipse cx="22" cy="32" rx="8" ry="14" fill="#8AAE4A" transform="rotate(-30,22,32)"/>
@@ -796,34 +900,27 @@
         <text x="58" y="30" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#F5F0E6">Movvi</text>
         <text x="62" y="50" font-family="Georgia, serif" font-weight="400" font-size="18" fill="rgba(245,240,230,0.8)">Spa</text>
       </svg>
-    </div>
-    <p>Restaurando equilíbrio entre corpo e mente.</p>
-    <p style="font-size:0.8rem; margin-top:0.5rem;">© 2025 Movvi Spa. Todos os direitos reservados.</p>
-    <div class="footer-links">
-      <a href="index.html">Início</a>
-      <a href="empresa.html">Empresa</a>
-      <a href="beneficios.html">Benefícios</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="contato.html">Contato</a>
-    </div>
-  </footer>
+      <p>© 2025 Movvi Spa · Florianópolis, SC</p>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="beneficios.html">Benefícios</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </footer>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
   </div><!-- /.main -->
 
   <script>
-
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
       document.getElementById('overlay').classList.toggle('open');
       document.getElementById('hamburger').classList.toggle('open');
     }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
